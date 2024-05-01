@@ -1113,3 +1113,13 @@
     }
 }();
 
+// Массив с выбранными цветами
+const colors = ['#f5edf0', '#dcbddf', '#bdbce3', '#fec9c9'];
+
+// Выбор случайного цвета из массива
+const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+// Применение случайного цвета к элементам с классами .section, .container и .container-fluid
+document.querySelectorAll('.section, .container, .container-fluid').forEach(element => {
+    element.style.backgroundColor = randomColor;
+});
