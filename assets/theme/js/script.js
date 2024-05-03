@@ -1123,3 +1123,16 @@ const randomColor = colors[Math.floor(Math.random() * colors.length)];
 document.querySelectorAll('.section, .container, .container-fluid').forEach(element => {
     element.style.backgroundColor = randomColor;
 });
+
+//Смена main фото
+// const images = ["assets/images/main_4.png", "assets/images/ph_2.png", "assets/images/ph_6.png", "assets/images/ph_1.png"]; // Поместите пути к вашим картинкам в этот массив
+//     const mainImage = document.getElementById("mainImage");
+//     let currentIndex = 0;
+
+//     function changeImage() {
+//         mainImage.src = images[currentIndex];
+//         currentIndex = (currentIndex + 1) % images.length;
+//     }
+
+//     setInterval(changeImage, 4000); 
+
