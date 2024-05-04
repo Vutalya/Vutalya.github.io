@@ -1114,7 +1114,7 @@
 }();
 
 // Массив с выбранными цветами
-const colors = ['#f5edf0', '#dcbddf', '#bdbce3', '#fec9c9'];
+const colors = ['#f5edf0'];
 
 // Выбор случайного цвета из массива
 const randomColor = colors[Math.floor(Math.random() * colors.length)];
