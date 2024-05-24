@@ -352,8 +352,11 @@ nav .mbr-section-btn {
 /*! Btn icon margin */
 .btn .mbr-iconfont,
 .btn.btn-sm .mbr-iconfont {
-	cursor: pointer
+	cursor: pointer;
+	border-color: #000000;
 }
+
+
 
 [type="submit"] {
 	-webkit-appearance: none
@@ -1205,7 +1208,48 @@ body {
 	justify-content: center;
 	word-break: break-word;
 	-webkit-align-items: center;
-	-webkit-justify-content: center
+	-webkit-justify-content: center;
+}
+
+
+/* CSS */
+.btn_p {
+  align-self: center;
+  background: transparent;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: .75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.btn_p:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.btn_p:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
 }
 
 .btn-sm {
@@ -1412,9 +1456,47 @@ pre {
 
 
 .carousel-item img {
-	width: auto;
-	height: auto;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
+
+.gallery {
+    display: flex;
+    gap: 10%;
+	height: 300px;
+}
+
+.gallery-item {
+    flex: 1;
+    transition: flex 0.3s linear;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    display:grid;
+}
+
+.gallery-item.active {
+    flex: 4;
+}
+
+.gallery-item:not(.active) {
+    flex: 1;
+}
+
+.hashtag {
+	box-shadow: 0 5px 15px 0 #ba9797a3;
+	transition: 0.5s;
+	background-color: #fdcecea3;
+	margin: 1%;
+  }
+  
+  .hashtag:hover {
+	transform: translate(0,-3px);
+	box-shadow: 0 20px 40px 0 #ba9797a3;
+  }
 
 .image-container {
 	position: relative;

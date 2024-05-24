@@ -1136,3 +1136,199 @@ document.querySelectorAll('.section, .container, .container-fluid').forEach(elem
 
 //     setInterval(changeImage, 4000); 
 
+document.addEventListener('DOMContentLoaded', () => {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            galleryItems.forEach(i => i.classList.remove('active'));
+            item.classList.add('active');
+        });
+    });
+});
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     const packageCards = document.getElementById('package-cards');
+
+//     const packages = {
+//         corporate: [
+//             {
+//                 title: "🍾 Минимальный",
+//                 price: "10000₽",
+//                 time: "за час",
+//                 description: "Для корпоративных мероприятий",
+//                 includes: ["Что входит", "Что входит"],
+//                 excludes: ["Что не входит", "Что не входит", "Что не входит"]
+//             },
+//             {
+//                 title: "💃 Оптимальный",
+//                 price: "30000₽",
+//                 time: "за час",
+//                 description: "Подойдет для корпоративных мероприятий",
+//                 includes: ["Что входит", "Что входит", "Что входит"],
+//                 excludes: ["Что не входит", "Что не входит"]
+//             }
+//         ],
+//         graduation: [
+//             {
+//                 title: "🎓 Базовый",
+//                 price: "15000₽",
+//                 time: "за час",
+//                 description: "Для выпускных вечеров",
+//                 includes: ["Что входит", "Что входит"],
+//                 excludes: ["Что не входит", "Что не входит"]
+//             },
+//             {
+//                 title: "🎉 Расширенный",
+//                 price: "35000₽",
+//                 time: "за час",
+//                 description: "Подойдет для выпускных вечеров",
+//                 includes: ["Что входит", "Что входит", "Что входит"],
+//                 excludes: ["Что не входит", "Что не входит"]
+//             }
+//         ],
+//         wedding: [
+//             {
+//                 title: "💍 Минимальный",
+//                 price: "20000₽",
+//                 time: "за час",
+//                 description: "Для свадебных церемоний",
+//                 includes: ["Что входит", "Что входит"],
+//                 excludes: ["Что не входит", "Что не входит"]
+//             },
+//             {
+//                 title: "👰 Премиум",
+//                 price: "50000₽",
+//                 time: "за час",
+//                 description: "Подойдет для свадебных церемоний",
+//                 includes: ["Что входит", "Что входит", "Что входит"],
+//                 excludes: ["Что не входит", "Что не входит"]
+//             }
+//         ]
+//     };
+
+//     const generateCardHTML = (pkg) => {
+//         return `
+//             <div class="col-lg-6 col-md-12">
+//                 <div class="card">
+//                     <h4 class="card__title mbr-bold mbr-fonts-style display-7">${pkg.title}</h4>
+//                     <h3 class="card__price mbr-bold mbr-fonts-style display-1">${pkg.price}</h3>
+//                     <div class="time__block">
+//                         <p class="card__time mbr-medium mbr-fonts-style display-4">${pkg.time}</p>
+//                     </div>
+//                     <p class="mbr-text mbr-medium mbr-fonts-style display-4">${pkg.description}</p>
+//                     <div class="price__list_check">
+//                         <div class="item__list mbr-fonts-style display-4">
+//                             ${pkg.includes.map(item => `<p class="item">${item}</p>`).join('')}
+//                         </div>
+//                     </div>
+//                     <div class="price__list_close">
+//                         <div class="item__list mbr-fonts-style display-4">
+//                             ${pkg.excludes.map(item => `<p class="item">${item}</p>`).join('')}
+//                         </div>
+//                         <a class="btn btn-secondary display-4" href="index.html#contacts" target="_blank">Написать<span class="fa-long-arrow-right fa mbr-iconfont mbr-iconfont-btn"></span></a>
+//                     </div>
+//                 </div>
+//             </div>
+//         `;
+//     };
+
+//     document.querySelectorAll('.btn-group .btn').forEach(button => {
+//         button.addEventListener('click', (event) => {
+//             const packageType = event.target.getAttribute('data-package');
+//             packageCards.innerHTML = packages[packageType].map(generateCardHTML).join('');
+//         });
+//     });
+
+//     // Trigger a default click to load the initial package
+//     document.querySelector('.btn-group .btn[data-package="corporate"]').click();
+// });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const packageCards = document.getElementById('package-cards');
+
+    const packages = {
+        corporate: [
+            {
+                title: "🍾 Корпоратив",
+                price: "20000₽",
+                time: "за 5 часов",
+                description: "",
+                includes: ["Проведение мероприятия", "Аренда экрана", "Звук + Свет", "Работа Dj", "Составление программы"],
+                excludes: []
+            },
+            {
+                title: "💃 Корпоратив + ",
+                price: "25000₽",
+                time: "за 6 часов",
+                description: "Подойдет для корпоративных мероприятий",
+                includes: ["Проведение мероприятия", "Аренда экрана", "Звук + Свет", "Работа Dj", "Составление программы"],
+                excludes: []
+            }
+        ],
+        graduation: [
+            {
+                title: "🎓 Выпуской",
+                price: "20000₽",
+                time: "за 5 часов",
+                description: "",
+                includes: ["Проведение мероприятия", "Аренда экрана", "Звук + Свет", "Работа Dj", "Составление программы"],
+                excludes: []
+            },
+            {
+                title: "🎉 Выпускной +",
+                price: "25000₽",
+                time: "за 6 часов",
+                description: "Подойдет для выпускных вечеров",
+                includes: ["Проведение мероприятия", "Аренда экрана", "Звук + Свет", "Работа Dj", "Составление программы"],
+                excludes: []
+            }
+        ],
+        wedding: [
+            {
+                title: "💍 Свадьба",
+                price: "25000₽",
+                time: "за 5 часов",
+                description: "",
+                includes: ["Проведение мероприятия", "Аренда экрана", "Звук + Свет", "Работа Dj", "Составление программы"],
+                excludes: []
+            },
+            {
+                title: "👰 Свадьба +",
+                price: "30000₽",
+                time: "за 6 часов",
+                description: "Подойдет для свадебных церемоний",
+                includes: ["Проведение мероприятия", "Аренда экрана", "Звук + Свет", "Работа Dj", "Составление программы"],
+                excludes: []
+            }
+        ]
+    };
+
+    const updateCardContent = (card, pkg) => {
+        card.querySelector('.card__title').textContent = pkg.title;
+        card.querySelector('.card__price').textContent = pkg.price;
+        card.querySelector('.card__time').textContent = pkg.time;
+        card.querySelector('.mbr-text').textContent = pkg.description;
+
+        const includes = card.querySelector('.price__list_check .item__list');
+        includes.innerHTML = pkg.includes.map(item => `<p class="item">${item}</p>`).join('');
+
+        const excludes = card.querySelector('.price__list_close .item__list');
+        excludes.innerHTML = pkg.excludes.map(item => `<p class="item">${item}</p>`).join('');
+    };
+
+    document.querySelectorAll('.btn-group .btn_p').forEach(button => {
+        button.addEventListener('click', (event) => {
+            const packageType = event.target.getAttribute('data-package');
+            const selectedPackages = packages[packageType];
+
+            const cards = packageCards.querySelectorAll('.col-lg-4.col-md-6');
+            selectedPackages.forEach((pkg, index) => {
+                updateCardContent(cards[index], pkg);
+            });
+        });
+    });
+
+    // Trigger a default click to load the initial package
+    document.querySelector('.btn-group .btn_p[data-package="corporate"]').click();
+});
